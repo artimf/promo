@@ -1,6 +1,6 @@
-<?php
+<?php 
 $to="shop@theme4u.ru";
-/*Your Email*/
+/*Your Email.*/
 $subject="Suscription from the website";
 /*Issue*/
 $date=date("l, F jS, Y");
@@ -9,6 +9,8 @@ $time=date("h:i A");
 $email  = $_REQUEST['email'];
 $name   = $_REQUEST['name'];
 $tel    = $_REQUEST['tel'];
+
+$price_kind = $_REQUEST['price_kind'];
 
 
 $msg="
@@ -26,7 +28,7 @@ echo "<div class='alert alert-danger'>
 		  <strong>Warning!</strong> Please fill all the fields.
 	  </div>";
 } else {
-mail($to,$subject,$msg.';'.$email,"From:".$to);
+mail($to,$subject,$msg.$price_kind.';'.$email,"From:".$to);
 echo "<div class='alert alert-success'>
 		  <a class='close' data-dismiss='alert'>×</a>
 		  <strong>Thank you for your message!</strong>
